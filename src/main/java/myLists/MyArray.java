@@ -66,7 +66,7 @@ public class MyArray implements MyLists {
     }
 
     @Override
-    public Integer[] sortUp() {
+    public void sortUp() {
         for (int i = 0; i < size - 1; i++)
             for (int j = 0; j < size - 1; j++)
                 if (array[j] > array[j + 1]) {
@@ -74,11 +74,21 @@ public class MyArray implements MyLists {
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
                 }
+
+        /* another way:
+        for (int i = 0; i < size - 1; i++)
+            for (int j = 1; j < size; j++)
+                if (array[j - 1] > array[j]) {
+                    int temp = array[j];
+                    array[j] = array[j - 1];
+                    array[j - 1] = temp;
+                }
         return array;
+        */
     }
 
     @Override
-    public Integer[] sortDown() {
+    public void sortDown() {
         for (int i = 0; i < size - 1; i++)
             for (int j = 0; j < size - 1; j++)
                 if (array[j] < array[j + 1]) {
@@ -86,6 +96,19 @@ public class MyArray implements MyLists {
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
                 }
+        /* another way:
+        for (int i = 0; i < size - 1; i++)
+            for (int j = 1; j < size; j++)
+                if (array[j - 1] < array[j]) {
+                    int temp = array[j];
+                    array[j] = array[j - 1];
+                    array[j - 1] = temp;
+                }
+        return array;
+        */
+    }
+
+    public Integer[] getArray(){
         return array;
     }
 }

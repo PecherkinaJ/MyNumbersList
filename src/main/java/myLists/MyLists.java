@@ -2,13 +2,13 @@ package myLists;
 
 public interface MyLists {
 
-    public Number find(int position);
+    public Integer find(int position);
 
     public void add(Integer obj);
 
     public boolean remove(int position);
 
-    public Number[] sortUp();
-    public Number[] sortDown();
+    public void sortUp();
+    public void sortDown();
 
 }
