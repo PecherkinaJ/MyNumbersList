@@ -13,7 +13,7 @@ public class MyArray implements MyLists {
 
     @Override
     public Integer find(int position) {
-        Integer toReturn = null;
+        Integer toReturn;
         try {
             toReturn = array[position];
         } catch (Exception e) {
@@ -52,16 +52,11 @@ public class MyArray implements MyLists {
     @Override
     public boolean remove(int position) {
         if (position < size) {
-            try {
-                for (int i = position + 1; i < array.length; i++) {
+            for (int i = position + 1; i < array.length; i++) {
                     array[i - 1] = array[i];
                 }
-                size--;
-                return true;
-            } catch (Exception e) {
-                System.out.println("Exception while removing element: " + e);
-                return false;
-            }
+            size--;
+            return true;
         } else throw new IllegalArgumentException("element doesn't exist");
     }
 

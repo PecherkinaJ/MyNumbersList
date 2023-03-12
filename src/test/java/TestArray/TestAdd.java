@@ -1,3 +1,5 @@
+package TestArray;
+
 import myLists.MyArray;
 
 import org.junit.runner.RunWith;

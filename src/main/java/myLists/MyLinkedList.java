@@ -7,8 +7,8 @@ public class MyLinkedList implements MyLists {
     private int size = 0;
 
     public Integer find(int position) {
-        if (position > size) {
-            throw new IllegalArgumentException("element doesn't exist");
+        if (position > size || position < 0) {
+            throw new IllegalArgumentException("wrong position");
         } else {
             Integer element = 0;
             Node node = head;
@@ -46,13 +46,16 @@ public class MyLinkedList implements MyLists {
         if (position > size) {
             throw new IllegalArgumentException("element doesn't exist");
         } else if (position == size) {
+            ///// 0 -> 2 -> 4 -> 6   => 6
             for (int i = 1; i < position; i++) {
-                current = current.next;
                 if (i == position - 1) {
-                    tail = current.next;
+                    current.next = null;
+                    tail = current;
+                    size--;
+                    return true;
                 }
+                current = current.next;
             }
-            size--;
             return true;
         } else if (position == 1) {
             head = head.next;
