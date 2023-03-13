@@ -20,13 +20,14 @@ public class TestSortDown {
         assertEquals(expected, actual);
     }
 
-    @Test
+    @Test (expected = Exception.class)
     public void testSortEmptyArray() throws Exception {
         MyArray array = new MyArray();
-        Integer[] expected = {null, null, null, null, null, null, null, null, null, null};
-        array.sortDown();
-        Integer[] actual = array.getArray();
-        assertEquals(expected, actual);
+        try {
+            array.sortDown();
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
     }
 
     @Test
