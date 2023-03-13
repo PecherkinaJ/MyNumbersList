@@ -85,34 +85,42 @@ public class MyLinkedList implements MyLists {
             node = node.next;
         }
     }
-    public void sortUp() {
-        for (int i = 1; i < size; i++) {
-            Node first = head;
-            for (int j = 1; j < size; j++) {
-                Node second = first.next;
-                if (first.currentElement > second.currentElement) {
-                    Integer tempFirstInt = first.currentElement;
-                    first.currentElement = second.currentElement;
-                    second.currentElement = tempFirstInt;
+    public void sortUp() throws Exception {
+        if (size > 0) {
+            for (int i = 1; i < size; i++) {
+                Node first = head;
+                for (int j = 1; j < size; j++) {
+                    Node second = first.next;
+                    if (first.currentElement != null || second.currentElement != null) {
+                        if (first.currentElement > second.currentElement) {
+                            Integer tempFirstInt = first.currentElement;
+                            first.currentElement = second.currentElement;
+                            second.currentElement = tempFirstInt;
+                        }
+                        first = first.next;
+                    } else throw new IllegalArgumentException("one of the list's element is null");
                 }
-                first = first.next;
             }
-        }
+        } else throw new IllegalArgumentException("list is empty!");
     }
 
-    public void sortDown() {
-        for (int i = 1; i < size; i++) {
-            Node first = head;
-            for (int j = 1; j < size; j++) {
-                Node second = first.next;
-                if (first.currentElement < second.currentElement) {
-                    Integer tempFirstInt = first.currentElement;
-                    first.currentElement = second.currentElement;
-                    second.currentElement = tempFirstInt;
+    public void sortDown() throws Exception {
+        if (size > 0) {
+            for (int i = 1; i < size; i++) {
+                Node first = head;
+                for (int j = 1; j < size; j++) {
+                    Node second = first.next;
+                    if (first.currentElement != null || second.currentElement != null) {
+                        if (first.currentElement < second.currentElement) {
+                            Integer tempFirstInt = first.currentElement;
+                            first.currentElement = second.currentElement;
+                            second.currentElement = tempFirstInt;
+                        }
+                        first = first.next;
+                    } else throw new IllegalArgumentException("one of the list's element is null");
                 }
-                first = first.next;
             }
-        }
+        } else throw new IllegalArgumentException("list is empty!");
     }
 
 

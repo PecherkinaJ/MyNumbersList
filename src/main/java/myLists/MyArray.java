@@ -61,14 +61,15 @@ public class MyArray implements MyLists {
     }
 
     @Override
-    public void sortUp() {
-        for (int i = 0; i < size - 1; i++)
-            for (int j = 0; j < size - 1; j++)
-                if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
+    public void sortUp() throws Exception {
+        if (size > 0) {
+            for (int i = 0; i < size - 1; i++)
+                for (int j = 0; j < size - 1; j++)
+                    if (array[j] > array[j + 1]) {
+                        int temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
 
         /* another way:
         for (int i = 0; i < size - 1; i++)
@@ -80,10 +81,12 @@ public class MyArray implements MyLists {
                 }
         return array;
         */
+        } else throw new IllegalArgumentException("array is empty!");
     }
 
     @Override
-    public void sortDown() {
+    public void sortDown() throws Exception {
+        if (size > 0) {
         for (int i = 0; i < size - 1; i++)
             for (int j = 0; j < size - 1; j++)
                 if (array[j] < array[j + 1]) {
@@ -101,9 +104,14 @@ public class MyArray implements MyLists {
                 }
         return array;
         */
+        } else throw new IllegalArgumentException("array is empty!");
     }
 
     public Integer[] getArray(){
         return array;
+    }
+
+    public int getSize() {
+        return size;
     }
 }

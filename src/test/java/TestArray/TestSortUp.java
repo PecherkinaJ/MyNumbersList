@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class TestSortUp {
 
     @Test
-    public void testSortLessThan10Elements(){
+    public void testSortLessThan10Elements() throws Exception {
         MyArray array = new MyArray();
         array.add(8);
         array.add(-2);
@@ -19,17 +19,18 @@ public class TestSortUp {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void testSortEmptyArray(){
+    @Test (expected = Exception.class)
+    public void testSortEmptyArray() throws Exception {
         MyArray array = new MyArray();
-        Integer[] expected = {null, null, null, null, null, null, null, null, null, null};
-        array.sortUp();
-        Integer[] actual = array.getArray();
-        assertEquals(expected, actual);
+        try {
+            array.sortUp();
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
     }
 
     @Test
-    public void testSortZeroesArray(){
+    public void testSortZeroesArray() throws Exception {
         MyArray array = new MyArray();
         array.add(0);
         array.add(0);
@@ -43,7 +44,7 @@ public class TestSortUp {
     }
 
     @Test
-    public void testSortArrayWithMoreThan10Elements(){
+    public void testSortArrayWithMoreThan10Elements() throws Exception {
         MyArray array = new MyArray();
         array.add(0);
         array.add(2);
@@ -65,7 +66,7 @@ public class TestSortUp {
     }
 
     @Test
-    public void testSortArrayWithSortedElements(){
+    public void testSortArrayWithSortedElements() throws Exception {
         MyArray array = new MyArray();
         array.add(0);
         array.add(1);

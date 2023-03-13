@@ -8,7 +8,7 @@ public interface MyLists {
 
     public boolean remove(int position);
 
-    public void sortUp();
-    public void sortDown();
+    public void sortUp() throws Exception;
+    public void sortDown() throws Exception;
 
 }

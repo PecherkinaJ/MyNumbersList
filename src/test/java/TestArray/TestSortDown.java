@@ -9,7 +9,7 @@ public class TestSortDown {
 
 
     @Test
-    public void testSortLessThan10Elements(){
+    public void testSortLessThan10Elements() throws Exception {
         MyArray array = new MyArray();
         array.add(8);
         array.add(-2);
@@ -21,7 +21,7 @@ public class TestSortDown {
     }
 
     @Test
-    public void testSortEmptyArray(){
+    public void testSortEmptyArray() throws Exception {
         MyArray array = new MyArray();
         Integer[] expected = {null, null, null, null, null, null, null, null, null, null};
         array.sortDown();
@@ -30,7 +30,7 @@ public class TestSortDown {
     }
 
     @Test
-    public void testSortZeroesArray(){
+    public void testSortZeroesArray() throws Exception {
         MyArray array = new MyArray();
         array.add(0);
         array.add(0);
@@ -44,7 +44,7 @@ public class TestSortDown {
     }
 
     @Test
-    public void testSortArrayWithMoreThan10Elements(){
+    public void testSortArrayWithMoreThan10Elements() throws Exception {
         MyArray array = new MyArray();
         array.add(0);
         array.add(2);
@@ -66,7 +66,7 @@ public class TestSortDown {
     }
 
     @Test
-    public void testSortArrayWithSortedElements(){
+    public void testSortArrayWithSortedElements() throws Exception {
         MyArray array = new MyArray();
         array.add(0);
         array.add(1);
