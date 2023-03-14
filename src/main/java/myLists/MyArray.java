@@ -63,8 +63,8 @@ public class MyArray implements MyLists {
     @Override
     public void sortUp() throws Exception {
         if (size > 0) {
-            for (int i = 0; i < size - 1; i++)
-                for (int j = 0; j < size - 1; j++)
+            for (int i = 0; i < size - 2; i++)
+                for (int j = 0; j < size - 2; j++)
                     if (array[j] > array[j + 1]) {
                         int temp = array[j];
                         array[j] = array[j + 1];
@@ -87,8 +87,8 @@ public class MyArray implements MyLists {
     @Override
     public void sortDown() throws Exception {
         if (size > 0) {
-        for (int i = 0; i < size - 1; i++)
-            for (int j = 0; j < size - 1; j++)
+        for (int i = 0; i < size - 2; i++)
+            for (int j = 0; j < size - 2; j++)
                 if (array[j] < array[j + 1]) {
                     Integer temp = array[j];
                     array[j] = array[j + 1];
