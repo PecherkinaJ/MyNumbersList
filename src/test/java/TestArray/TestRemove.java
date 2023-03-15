@@ -20,6 +20,16 @@ public class TestRemove {
     }
 
     @Test(expected = Exception.class)
+    public void removeNegativePositionShouldGiveThrowException() throws Exception {
+        MyArray array = new MyArray();
+        try {
+            array.remove(-30);
+        } catch (Exception e) {
+            throw new Exception();
+        }
+    }
+
+    @Test(expected = Exception.class)
     public void removeIncorrectPositionShouldThrowException() throws Exception {
         MyArray array = new MyArray();
         try {

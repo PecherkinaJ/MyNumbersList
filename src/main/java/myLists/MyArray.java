@@ -51,10 +51,10 @@ public class MyArray implements MyLists {
 
     @Override
     public boolean remove(int position) {
-        if (position < size) {
+        if (position < size && position >= 0) {
             for (int i = position + 1; i < array.length; i++) {
-                    array[i - 1] = array[i];
-                }
+                array[i - 1] = array[i];
+            }
             size--;
             return true;
         } else throw new IllegalArgumentException("element doesn't exist");
@@ -87,13 +87,13 @@ public class MyArray implements MyLists {
     @Override
     public void sortDown() throws Exception {
         if (size > 0) {
-        for (int i = 0; i < size - 2; i++)
-            for (int j = 0; j < size - 2; j++)
-                if (array[j] < array[j + 1]) {
-                    Integer temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
+            for (int i = 0; i < size - 2; i++)
+                for (int j = 0; j < size - 2; j++)
+                    if (array[j] < array[j + 1]) {
+                        Integer temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
         /* another way:
         for (int i = 0; i < size - 2; i++)
             for (int j = 1; j < size - 1; j++)
@@ -107,7 +107,7 @@ public class MyArray implements MyLists {
         } else throw new IllegalArgumentException("array is empty!");
     }
 
-    public Integer[] getArray(){
+    public Integer[] getArray() {
         return array;
     }
 

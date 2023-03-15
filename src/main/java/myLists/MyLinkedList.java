@@ -13,8 +13,9 @@ public class MyLinkedList implements MyLists {
             Integer element = 0;
             Node node = head;
             for (int i = 1; i <= position; i++) {
-                element = node.currentElement;
                 node = node.next;
+                if (i == position)
+                    element = node.currentElement;
             }
             return element;
         }
